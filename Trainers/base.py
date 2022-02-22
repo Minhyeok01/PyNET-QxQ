@@ -75,7 +75,7 @@ class AbstractTrainer(metaclass=ABCMeta):
                 if self.args.metric:
                     description = '[TEST]: ' + ', '.join(k + ' {:.3f}'.format(v) for k, v in average_meter_set.averages().items())
                 else:
-                    description = '[TEST]: '
+                    description = '[TEST] '
                 tqdm_dataloader.set_description(description)
 
                 self.save_img_file(self.result_path, enhanced, self.loader_test, batch_idx)
