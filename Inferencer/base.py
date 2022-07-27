@@ -14,7 +14,7 @@ from Utils.msssim import MSSSIM
 from Utils.utils import sigmoid_flops_counter_hook
 
 
-class AbstractTrainer(metaclass=ABCMeta):
+class AbstractInferencer(metaclass=ABCMeta):
     def __init__(self, args, model, loader):
         self.args = args     
         self.model = model

@@ -14,7 +14,7 @@ class Model(nn.Module):
         if args.n_GPUs==1:
             os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
-        module = import_module('Models.' + args.model.lower())
+        module = import_module('Model.' + args.model.lower())
         self.model = module.make_model(args).to(self.device)
         self.model_name = args.model
 

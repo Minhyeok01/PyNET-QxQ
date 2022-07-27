@@ -5,12 +5,12 @@ from Utils.utils import get_gray_image
 
 
 def make_model(args, parent=False):
-    return PyNET_QxQ(args)
+    return PyNET_QxQ_student(args)
 
 
-class PyNET_QxQ(nn.Module):
+class PyNET_QxQ_student(nn.Module):
     def __init__(self, args, instance_norm_level_1=False):
-        super(PyNET_QxQ, self).__init__()
+        super(PyNET_QxQ_student, self).__init__()
         instance_norm_level_1 = args.instance_norm_level_1
         self.device = torch.device('cpu' if args.cpu else 'cuda')
         

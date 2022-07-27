@@ -1,6 +1,6 @@
 import argparse
 
-parser = argparse.ArgumentParser(description='QxQ Demosaic Deep Learning Model')
+parser = argparse.ArgumentParser(description='QxQ Demosaic Deep Learning Inference Model')
 
 
 # Hardware specifications
@@ -34,7 +34,7 @@ parser.add_argument('--data_test', type=str, default='DIV2K', choices=['DIV2K','
 
 
 # Model specifications
-parser.add_argument('--model', default='pynet_qxq',
+parser.add_argument('--model', default='pynet_qxq_student_only',
                     help='model name')
 parser.add_argument('--tag', default='0.1',
                     help='model tag')
@@ -44,10 +44,10 @@ parser.add_argument('--cfa_type', type=str, default="QxQ",
                     help='cfa type')
 parser.add_argument('--ratio_augmentation', type=int, default=0.0,
                     help='ratio_augmentation')
-parser.add_argument('--trainer', type=str, default='pynet_qxq',
-                    help='custom trainer')
+parser.add_argument('--inferencer', type=str, default='pynet_qxq_inference_eval',
+                    help='custom inferencer')
 parser.add_argument('--instance_norm_level_1', type=str, default='True',
-                    help='custom trainer')
+                    help='set normalization')
 
 # Log specifications
 parser.add_argument('--export_root', type=str, default='./Experiments',

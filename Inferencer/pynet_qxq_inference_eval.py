@@ -1,17 +1,17 @@
 import torch
 import math
 
-from .base import AbstractTrainer
+from .base import AbstractInferencer
 from Utils.msssim import MSSSIM
 from Utils.vgg import vgg_custom
 from Utils.utils import normalize_batch
 
 
-def make_trainer(args, model, loader):
-    return PyNetTrainer(args, model, loader)
+def make_Inferencer(args, model, loader):
+    return Inferencer(args, model, loader)
 
 
-class PyNetTrainer(AbstractTrainer):
+class Inferencer(AbstractInferencer):
     def __init__(self, args, model, loader):
         super().__init__(args, model, loader)
 
